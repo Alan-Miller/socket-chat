@@ -31,16 +31,13 @@ class App extends Component {
   send(e) {
     e.preventDefault();
     const { username, message } = this.state;
-    const obj = { username, message };
-    console.log(obj);
-    socket.emit('new message', obj);
+    socket.emit('new message', { username, message });
     this.setState({ message: '' });
   }
 
   render() {
     const { username, message, messages } = this.state;
     const formComplete = username && message;
-    console.log('messages', this.state.messages);
 
     return (
       <div className="App">
