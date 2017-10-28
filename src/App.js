@@ -65,7 +65,7 @@ class App extends Component {
 
           <div className="messages">
             {!messages.length ? 'No messages yet :(' : this.state.messages.map((item, i) => (
-              <div>{item.username}: {item.message}</div>
+              <div key={i}>{item.username}: {item.message}</div>
             ))}
           </div>
         </main>
